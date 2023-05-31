@@ -1,12 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import logoImage from './images/Rustic_Printed-removebg-preview.png'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Biografias Afrocentradas</h1>
-      </header>
+      <div className="wrapLogin">
+        <form className="forLogin">
+          <span className="titleLogin">Boas vindas!</span>
+
+          <span className="titleLogin">
+            <img src={logoImage} ></img>
+          </span>
+
+          <div className='inputs'>
+            <input></input>
+            <input></input>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
