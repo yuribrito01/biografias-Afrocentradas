@@ -1,0 +1,26 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.containerLogin {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: #F2DE79;
+}
+
+.wrapLogin {
+ width: 390;
+ background-color: #1F0802;
+ border-radius: 10px;
+
+ overflow: hidden;
+ padding: 50px 55px 33px 55px;
+ box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
