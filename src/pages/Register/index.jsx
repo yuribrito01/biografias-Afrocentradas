@@ -1,7 +1,7 @@
 import { LayoutComponents } from "../../components/layoutComponents";
 import logoImage from "../../images/Rustic_Printed-removebg-preview.png"
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../../services/firebaseConfig";
 import { Loader } from "../../components/loader";
@@ -24,6 +24,10 @@ export const Register = () => {
 
       if(loading) {
         return <Loader />;
+      }
+
+      if(user) {
+        return <Navigate to="/" />
       }
 
       
