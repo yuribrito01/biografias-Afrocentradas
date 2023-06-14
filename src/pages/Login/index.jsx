@@ -5,6 +5,7 @@ import { Link, Navigate } from "react-router-dom";
 import { LayoutComponents } from '../../components/layoutComponents';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../../services/firebaseConfig';
+import { Loader } from '../../components/loader';
 
 
 export const Login = () => {
@@ -23,7 +24,7 @@ export const Login = () => {
       }
 
       if (loading) {
-        return <p>Carregando...</p>;
+        return <Loader />
       }
 
       if (user) {

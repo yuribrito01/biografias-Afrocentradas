@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../../services/firebaseConfig";
-
+import { Loader } from "../../components/loader";
 
 export const Register = () => {
     const [email, setEmail] = useState("");
@@ -23,7 +23,7 @@ export const Register = () => {
       }
 
       if(loading) {
-        return <p>carregando...</p>;
+        return <Loader />;
       }
 
       
