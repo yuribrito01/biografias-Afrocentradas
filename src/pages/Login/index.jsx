@@ -1,13 +1,35 @@
 
 import { useState } from 'react';
 import logoImage from '../../images/Rustic_Printed-removebg-preview.png'
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { LayoutComponents } from '../../components/layoutComponents';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { auth } from '../../services/firebaseConfig';
 
 
 export const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useSignInWithEmailAndPassword(auth);
+
+      function handleSingIn(e) {
+        e.preventDefault();
+        signInWithEmailAndPassword(email, password);
+      }
+
+      if (loading) {
+        return <p>Carregando...</p>;
+      }
+
+      if (user) {
+        return <Navigate to="/" />
+      }
+
     return (
         <LayoutComponents>
             <form className="formLogin">
@@ -28,7 +50,7 @@ export const Login = () => {
                 </div>
 
                 <div className='containerLoginBtn'>
-                    <button className='loginFormBtn'>Login</button>
+                    <button className='loginFormBtn' onClick={handleSingIn}>Login</button>
                 </div>
 
                 <div className='textCenter'>

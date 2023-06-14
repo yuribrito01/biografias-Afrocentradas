@@ -2,15 +2,32 @@ import { LayoutComponents } from "../../components/layoutComponents";
 import logoImage from "../../images/Rustic_Printed-removebg-preview.png"
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-
-
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { auth } from "../../services/firebaseConfig";
 
 
 export const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+
+      function handleRegister(e) {
+        e.preventDefault();
+        createUserWithEmailAndPassword(email, password);
+      }
+
+      if(loading) {
+        return <p>carregando...</p>;
+      }
+
+      
+
     return (
         <LayoutComponents>
             <form className="formLogin">
@@ -36,7 +53,7 @@ export const Register = () => {
                 </div>
 
                 <div className='containerLoginBtn'>
-                    <button className='loginFormBtn'>Cadastrar</button>
+                    <button className='loginFormBtn' onClick={handleRegister}>Cadastrar</button>
                 </div>
 
                 <div className='textCenter'>
