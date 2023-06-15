@@ -1,0 +1,15 @@
+.listCardsHome {
+    background-color: rgb(255, 255, 241);
+    text-align: center;
+}
+
+.listCardsHome h1 {
+    padding-top: 20px;
+}
+
+.peopleCardsHome {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 80px;
+}
