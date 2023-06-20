@@ -1,0 +1,35 @@
+{
+    "honoredPeople": [
+      {
+        "image": "carolina",
+        "name": "Carolina Maria",
+        "description": "Carolina Maria de Jesus é uma das figuras mais emblemáticas da literatura brasileira. Seu livro Quarto de Despejo, publicado em 1960, é um retrato fiel e impactante da vida de uma mulher negra e pobre que viveu nas favelas de São Paulo nos anos 50."
+      },
+      {
+        "image": "marielle",
+        "name": "Marielle Franco",
+        "description": "Socióloga e política, Marielle Franco foi vereadora do Rio de Janeiro e uma defensora incansável dos direitos humanos. Ela lutou pelos direitos das mulheres, da população negra e das comunidades marginalizadas, sendo uma voz ativa contra a violência policial."
+      },
+      {
+        "image": "miltom",
+        "name": "Milton Santos",
+        "description": "Geógrafo e intelectual, Milton Santos foi um dos principais pensadores brasileiros do século XX. Ele contribuiu para a compreensão da geografia humana e social, analisando as desigualdades espaciais e a exclusão no Brasil e no mundo."
+      },
+      {
+        "image": "machado",
+        "name": "Machado de Assis",
+        "description": "Reconhecido como um dos maiores escritores da literatura brasileira, Machado de Assis foi o primeiro presidente da Academia Brasileira de Letras. Ele é conhecido por obras como Memórias Póstumas de Brás Cubas e Dom Casmurro."
+      },
+      {
+        "image": "dandara",
+        "name": "Dandara dos Palmares",
+        "description": "Dandara foi uma guerreira e líder quilombola durante o período colonial brasileiro. Esposa de Zumbi dos Palmares, ela desempenhou um papel fundamental na defesa do Quilombo dos Palmares contra a opressão colonial."
+      },
+      {
+        "image": "abdias",
+        "name": "Abdias do Nascimento",
+        "description": "Artista, político e ativista, Abdias do Nascimento foi uma figura central na luta pelos direitos dos afro-brasileiros. Ele fundou o Teatro Experimental do Negro e foi um dos pioneiros na valorização da cultura e da identidade negra no Brasil."
+      }
+    ]
+  }
+  

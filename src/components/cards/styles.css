@@ -42,3 +42,8 @@
       width: 100%;
     }
   }
+
+  .moreButton a{
+    text-decoration: none;
+    color: white;
+}
