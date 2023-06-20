@@ -4,6 +4,7 @@ import { Register } from "../pages/Register";
 import { Home } from "../pages/Home";
 import honoredPeople from "../pages/Home/people.json"
 import { PersonBigraphy } from "../pages/PersonBiography";
+import { Contact } from "../pages/Contact/contaxt";
 
 
 export const AppRouter = () => {
@@ -16,6 +17,8 @@ export const AppRouter = () => {
                 {honoredPeople.honoredPeople.map((person, index) => (
                     <Route key={index} path={person.name} element={<PersonBigraphy person={person} />}></Route>
                 ))}
+                <Route path="/contato" element={<Contact />}></Route>
+
             </Routes>
         </Router>
     );
