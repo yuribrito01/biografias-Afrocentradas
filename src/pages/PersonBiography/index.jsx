@@ -6,6 +6,7 @@ import miltom from "../../images/milton_santos.webp"
 import machado from "../../images/machado-de-assis.webp"
 import dandara from "../../images/capa_dandara.jpeg"
 import abdias from "../../images/abdias-do-Nascimento.jpg"
+import "./styles.css"
 
 
 

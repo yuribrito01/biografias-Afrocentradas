@@ -8,6 +8,8 @@ import dandara from "../../images/capa_dandara.jpeg"
 import abdias from "../../images/abdias-do-Nascimento.jpg"
 import honoredPeople from "../Home/people.json"
 import { useState } from "react"
+import "./styles.css"
+
 
 
 export const Explore = () => {

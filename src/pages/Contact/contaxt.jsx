@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navbar } from "../../components/navbar";
 import emailjs from "@emailjs/browser"
+import "./styles.css"
 
 
 

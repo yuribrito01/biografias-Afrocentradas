@@ -1,0 +1,41 @@
+.contactUs {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .contactUs h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contactUs form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contactUs input,
+  .contactUs textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .contactUs textarea {
+    height: 150px;
+  }
+  
+  .contactUs button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .contactUs button:hover {
+    background-color: #45a049;
+  }
+  
