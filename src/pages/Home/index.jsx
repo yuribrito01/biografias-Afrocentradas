@@ -9,6 +9,7 @@ import dandara from "../../images/capa_dandara.jpeg";
 import abdias from "../../images/abdias-do-Nascimento.jpg";
 import "./styles.css";
 import honoredPeople from "./people.json";
+import { Footer } from "../../components/footer";
 
 export const Home = () => {
   const imageMap = {
@@ -44,11 +45,13 @@ export const Home = () => {
                 image={image}
                 name={card.name}
                 description={card.description}
+                curtir="Curtir"
               />
             );
           })}
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
