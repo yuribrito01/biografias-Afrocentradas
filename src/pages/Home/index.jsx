@@ -1,17 +1,14 @@
 import { Card } from "../../components/cards";
-import { Navbar } from "../../components/navbar"
-import logo from "../../images/Rustic_Printed-removebg-preview.png"
-import carolina from "../../images/carolina.webp"
-import marielle from "../../images/marielle-franco.webp"
-import miltom from "../../images/milton_santos.webp"
-import machado from "../../images/machado-de-assis.webp"
-import dandara from "../../images/capa_dandara.jpeg"
-import abdias from "../../images/abdias-do-Nascimento.jpg"
-import "./styles.css"
-import honoredPeople from "./people.json"
-
-
-
+import { Navbar } from "../../components/navbar";
+import logo from "../../images/Rustic_Printed-removebg-preview.png";
+import carolina from "../../images/carolina.webp";
+import marielle from "../../images/marielle-franco.webp";
+import miltom from "../../images/milton_santos.webp";
+import machado from "../../images/machado-de-assis.webp";
+import dandara from "../../images/capa_dandara.jpeg";
+import abdias from "../../images/abdias-do-Nascimento.jpg";
+import "./styles.css";
+import honoredPeople from "./people.json";
 
 export const Home = () => {
     const imageMap = {
@@ -47,5 +44,7 @@ export const Home = () => {
                 </div>
             </div>
         </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
