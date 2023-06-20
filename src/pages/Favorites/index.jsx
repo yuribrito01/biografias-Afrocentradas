@@ -8,9 +8,9 @@ import machado from "../../images/machado-de-assis.webp";
 import dandara from "../../images/capa_dandara.jpeg";
 import abdias from "../../images/abdias-do-Nascimento.jpg";
 import "./styles.css";
-import honoredPeople from "./people.json";
+import honoredPeople from "../Home/people.json";
 
-export const Home = () => {
+export const Favorites = () => {
   const imageMap = {
     carolina: carolina,
     marielle: marielle,
@@ -22,30 +22,23 @@ export const Home = () => {
   return (
     <div>
       <Navbar />
-      <div className="infoHome">
-        <p id="textHome">
-          Aqui você encontrará biografias de pessoas negras notáveis que tiveram
-          um impacto significativo no país. Explore as histórias inspiradoras
-          desses indivíduos e descubra sua contribuição para diversas áreas,
-          como política, cultura, ciência, esportes e mais. Aprecie a
-          diversidade e a importância da representatividade negra na sociedade
-          brasileira.
-        </p>
-        <img src={logo} alt="Logo" />
-      </div>
+
       <div className="listCardsHome">
-        <h1>Conheça algumas pessoas em destaque</h1>
+        <h1>Meus Favoritos</h1>
         <div className="peopleCardsHome">
           {honoredPeople.honoredPeople.map((card, index) => {
             const image = imageMap[card.image] || null;
+            //if (favoritos[index] === card.name) {
             return (
               <Card
                 key={index}
                 image={image}
                 name={card.name}
                 description={card.description}
+                curtir="Descurtir"
               />
             );
+            //}
           })}
         </div>
       </div>
