@@ -28,6 +28,25 @@
 }
 
 .card button {
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}
+
+p {
+  text-align: left;
+}
+
+.moreButton {
   background: linear-gradient(
     90deg,
     rgba(131, 58, 180, 1) 0%,
@@ -53,21 +72,14 @@
     rgba(252, 126, 55, 1) 83%,
     rgba(252, 176, 69, 1) 100%
   );
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
 }
 
-@media (max-width: 600px) {
-  .card {
-    width: 100%;
-  }
-}
-
-.moreButton a {
+a {
   text-decoration: none;
   color: white;
+}
+
+.likeButton {
+  background-color: blue !important;
+  margin-right: 15%;
 }
