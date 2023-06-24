@@ -7,6 +7,7 @@ import machado from "../../images/machado-de-assis.webp";
 import dandara from "../../images/capa_dandara.jpeg";
 import abdias from "../../images/abdias-do-Nascimento.jpg";
 import "./styles.css";
+import { Footer } from "../../components/footer";
 
 export const PersonBigraphy = ({ person }) => {
   const imageMap = {
@@ -27,6 +28,7 @@ export const PersonBigraphy = ({ person }) => {
         <p>{person.longDescription}</p>
         <p>{person.life}</p>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

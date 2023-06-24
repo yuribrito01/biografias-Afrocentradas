@@ -10,8 +10,15 @@ import abdias from "../../images/abdias-do-Nascimento.jpg";
 import "./styles.css";
 import honoredPeople from "./people.json";
 import { Footer } from "../../components/footer";
+import { useState } from "react";
 
 export const Home = () => {
+  const [busca, setBusca] = useState("");
+
+  const peopleFiltered = honoredPeople.honoredPeople.filter((person) =>
+    person.name.toLocaleLowerCase().includes(busca.toLocaleLowerCase())
+  );
+
   const imageMap = {
     carolina: carolina,
     marielle: marielle,
@@ -21,23 +28,32 @@ export const Home = () => {
     abdias: abdias,
   };
   return (
-    <div>
+    <div className="listCardsHome">
       <Navbar />
       <div className="infoHome">
-        <p id="textHome">
-          Aqui você encontrará biografias de pessoas negras notáveis que tiveram
-          um impacto significativo no país. Explore as histórias inspiradoras
-          desses indivíduos e descubra sua contribuição para diversas áreas,
-          como política, cultura, ciência, esportes e mais. Aprecie a
-          diversidade e a importância da representatividade negra na sociedade
-          brasileira.
-        </p>
+        <div>
+          <i class="fa fa-search"></i>
+          <input
+            type="text"
+            onChange={(e) => setBusca(e.target.value)}
+            value={busca}
+            placeholder="Pesquisar"
+          />
+          <p id="textHome">
+            Aqui você encontrará biografias de pessoas negras notáveis que
+            tiveram um impacto significativo no país. Explore as histórias
+            inspiradoras desses indivíduos e descubra sua contribuição para
+            diversas áreas, como política, cultura, ciência, esportes e mais.
+            Aprecie a diversidade e a importância da representatividade negra na
+            sociedade brasileira.
+          </p>
+        </div>
         <img src={logo} alt="Logo" />
       </div>
-      <div className="listCardsHome">
+      <div>
         <h1>Conheça algumas pessoas em destaque</h1>
         <div className="peopleCardsHome">
-          {honoredPeople.honoredPeople.map((card, index) => {
+          {peopleFiltered.map((card, index) => {
             const image = imageMap[card.image] || null;
             return (
               <Card

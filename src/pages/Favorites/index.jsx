@@ -9,6 +9,7 @@ import dandara from "../../images/capa_dandara.jpeg";
 import abdias from "../../images/abdias-do-Nascimento.jpg";
 import "./styles.css";
 import honoredPeople from "../Home/people.json";
+import { Footer } from "../../components/footer";
 
 export const Favorites = () => {
   const imageMap = {
@@ -20,10 +21,10 @@ export const Favorites = () => {
     abdias: abdias,
   };
   return (
-    <div>
+    <div className="listCardsFavotite">
       <Navbar />
 
-      <div className="listCardsHome">
+      <div>
         <h1>Meus Favoritos</h1>
         <div className="peopleCardsHome">
           {honoredPeople.honoredPeople.map((card, index) => {
@@ -42,6 +43,7 @@ export const Favorites = () => {
           })}
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

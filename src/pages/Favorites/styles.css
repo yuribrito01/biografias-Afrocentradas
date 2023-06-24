@@ -1,11 +1,6 @@
-.listCardsHome {
-  background-color: rgb(255, 255, 216);
+.listCardsFavotite {
+  background-color: rgb(255, 216, 216);
   text-align: center;
-}
-
-h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  color: blue;
 }
 
 .listCardsHome h1 {

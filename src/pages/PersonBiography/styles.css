@@ -1,7 +1,7 @@
 .detailBiography {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: rgb(223, 253, 205);
 }
 
 .infosPerson {
@@ -25,4 +25,5 @@
 .infosPerson p {
   font-size: 16px;
   line-height: 1.5;
+  padding: 5%;
 }

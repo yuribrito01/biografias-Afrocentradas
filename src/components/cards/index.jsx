@@ -8,7 +8,7 @@ export const Card = ({ key, image, name, description, curtir }) => {
   }
   return (
     <div class="card">
-      <img src={image} />
+      <img className="imagem" src={image} />
       <h2>{name}</h2>
       <p>{description}</p>
       <button className="likeButton" onClick={Favoritar(key)}>

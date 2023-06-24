@@ -42,7 +42,7 @@ export const Contact = () => {
       );
   }
   return (
-    <div>
+    <div className="contact">
       <Navbar></Navbar>
       <div className="contactUs">
         <h1>Entre em contato com a gente </h1>

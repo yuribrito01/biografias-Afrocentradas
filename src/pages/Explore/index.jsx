@@ -27,7 +27,7 @@ export const Explore = () => {
     abdias: abdias,
   };
   return (
-    <div>
+    <div className="explore">
       <Navbar></Navbar>
       <div>
         <input
