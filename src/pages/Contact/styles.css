@@ -1,41 +1,46 @@
+.contact {
+  background-color: rgb(215, 244, 255);
+}
+
 .contactUs {
-    width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .contactUs h1 {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .contactUs form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .contactUs input,
-  .contactUs textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-  }
-  
-  .contactUs textarea {
-    height: 150px;
-  }
-  
-  .contactUs button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .contactUs button:hover {
-    background-color: #45a049;
-  }
-  
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contactUs h1 {
+  font-size: 24px;
+  text-align: start;
+  margin-bottom: 20px;
+}
+
+.contactUs form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactUs input,
+.contactUs textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.contactUs textarea {
+  height: 150px;
+}
+
+.contactUs button {
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.contactUs button:hover {
+  background-color: #3c8d40;
+}

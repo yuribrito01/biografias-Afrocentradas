@@ -1,29 +1,28 @@
 .detailBiography {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .infosPerson {
-    margin-top: 50px;
-    text-align: center;
-  }
-  
-  .infosPerson img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-  }
-  
-  .infosPerson h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .infosPerson p {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(223, 253, 205);
+}
+
+.infosPerson {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.infosPerson img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.infosPerson h2 {
+  font-size: 24px;
+}
+
+.infosPerson p {
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 5%;
+}

@@ -1,18 +1,62 @@
 .listCardsHome {
-    background-color: rgb(255, 255, 241);
-    text-align: center;
+  text-align: center;
+  background-color: rgb(254, 255, 220);
 }
 
 .listCardsHome h1 {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .peopleCardsHome {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 80px;
-    gap: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 80px;
+  gap: 50px;
 }
 
+.infoHome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(140, 55, 167, 1) 4%,
+    rgba(145, 54, 161, 1) 6%,
+    rgba(150, 53, 155, 1) 8%,
+    rgba(155, 52, 149, 1) 10%,
+    rgba(155, 52, 149, 1) 10%,
+    rgba(170, 48, 131, 1) 16%,
+    rgba(177, 46, 122, 1) 20%,
+    rgba(189, 43, 107, 1) 24%,
+    rgba(206, 39, 86, 1) 31%,
+    rgba(211, 38, 80, 1) 33%,
+    rgba(221, 36, 68, 1) 37%,
+    rgba(243, 31, 41, 1) 46%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(253, 53, 35, 1) 58%,
+    rgba(253, 62, 37, 1) 61%,
+    rgba(253, 74, 40, 1) 66%,
+    rgba(253, 84, 43, 1) 69%,
+    rgba(253, 90, 45, 1) 71%,
+    rgba(250, 104, 54, 1) 74%,
+    rgba(252, 126, 55, 1) 83%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}
+
+input {
+  width: 35%;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+#textHome {
+  margin: 3rem 0 2rem 10rem;
+  text-align: justify;
+  width: 60%;
+  font-size: 25px;
+  color: white;
+}
