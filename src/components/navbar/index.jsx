@@ -18,6 +18,9 @@ export const Navbar = () => {
         <li className="liNavbar">
           <Link to="/contato">Contato</Link>
         </li>
+        <li className="liNavbar">
+          <Link to="/novaPessoa">Nova Pessoa</Link>
+        </li>
       </ul>
       <div className="ulNavbar" id="buttonLoginHome">
         <button className="loginFormBtn">

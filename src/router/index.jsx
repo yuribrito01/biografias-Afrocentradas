@@ -6,6 +6,7 @@ import { Favorites } from "../pages/Favorites";
 import honoredPeople from "../pages/Home/people.json";
 import { PersonBigraphy } from "../pages/PersonBiography";
 import { Contact } from "../pages/Contact/contaxt";
+import { NewPerson } from "../pages/NewPerson";
 
 export const AppRouter = () => {
   return (
@@ -23,6 +24,7 @@ export const AppRouter = () => {
           ></Route>
         ))}
         <Route path="/contato" element={<Contact />}></Route>
+        <Route path="/novaPessoa" element={<NewPerson />}></Route>
       </Routes>
     </Router>
   );
