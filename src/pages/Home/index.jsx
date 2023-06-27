@@ -1,32 +1,44 @@
 import { Card } from "../../components/cards";
 import { Navbar } from "../../components/navbar";
 import logo from "../../images/Rustic_Printed-removebg-preview.png";
-import carolina from "../../images/carolina.webp";
-import marielle from "../../images/marielle-franco.webp";
-import miltom from "../../images/milton_santos.webp";
-import machado from "../../images/machado-de-assis.webp";
-import dandara from "../../images/capa_dandara.jpeg";
-import abdias from "../../images/abdias-do-Nascimento.jpg";
+// import carolina from "../../images/carolina.webp";
+// import marielle from "../../images/marielle-franco.webp";
+// import miltom from "../../images/milton_santos.webp";
+// import machado from "../../images/machado-de-assis.webp";
+// import dandara from "../../images/capa_dandara.jpeg";
+// import abdias from "../../images/abdias-do-Nascimento.jpg";
 import "./styles.css";
-import honoredPeople from "./people.json";
+
 import { Footer } from "../../components/footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../services/firebaseConfig";
 
 export const Home = () => {
+
+  const [cards, setCards] = useState([]);
+
+  useEffect (() => {
+    async function fetchCards() {
+      const querySnapshot = await getDocs(collection(db, "honored"));
+      const cardsList = [];
+      querySnapshot.forEach((doc) => {
+        console.log(doc.data());
+        cardsList.push(doc.data());
+      });
+      setCards(cardsList);
+    }
+
+    fetchCards();
+  }, []);
+  
+
   const [busca, setBusca] = useState("");
 
-  const peopleFiltered = honoredPeople.honoredPeople.filter((person) =>
-    person.name.toLocaleLowerCase().includes(busca.toLocaleLowerCase())
-  );
+  // const peopleFiltered = honoredPeople.honoredPeople.filter((person) =>
+  //   person.name.toLocaleLowerCase().includes(busca.toLocaleLowerCase())
+  // );
 
-  const imageMap = {
-    carolina: carolina,
-    marielle: marielle,
-    miltom: miltom,
-    machado: machado,
-    dandara: dandara,
-    abdias: abdias,
-  };
   return (
     <div className="listCardsHome">
       <Navbar />
@@ -53,14 +65,12 @@ export const Home = () => {
       <div>
         <h1>Conheça algumas pessoas em destaque</h1>
         <div className="peopleCardsHome">
-          {peopleFiltered.map((card, index) => {
-            const image = imageMap[card.image] || null;
+          {cards.map((card) => {
             return (
               <Card
-                key={index}
-                image={image}
+                image={card.image}
                 name={card.name}
-                description={card.description}
+                description={card.smallDescriptiopn}
                 curtir="Curtir"
               />
             );

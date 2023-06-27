@@ -1,5 +1,5 @@
 import { Navbar } from "../../components/navbar"
-import { collection, addDoc, onSnapshot } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from "../../services/firebaseConfig";
 import { useState } from "react";
 import "./styles.css"
