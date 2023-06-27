@@ -7,8 +7,26 @@ import honoredPeople from "../pages/Home/people.json";
 import { PersonBigraphy } from "../pages/PersonBiography";
 import { Contact } from "../pages/Contact/contaxt";
 import { NewPerson } from "../pages/NewPerson";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../services/firebaseConfig";
+import { useEffect, useState } from "react";
 
 export const AppRouter = () => {
+  const [cards, setCards] = useState([]);
+
+  useEffect (() => {
+    async function fetchCards() {
+      const querySnapshot = await getDocs(collection(db, "honored"));
+      const cardsList = [];
+      querySnapshot.forEach((doc) => {
+        cardsList.push(doc.data());
+      });
+      setCards(cardsList);
+    }
+
+    fetchCards();
+  }, []);
+
   return (
     <Router>
       <Routes>
@@ -16,9 +34,8 @@ export const AppRouter = () => {
         <Route path="/register" element={<Register />}></Route>
         <Route path="/" element={<Home />}></Route>
         <Route path="/favoritos" element={<Favorites />}></Route>
-        {honoredPeople.honoredPeople.map((person, index) => (
+        {cards.map((person) => (
           <Route
-            key={index}
             path={person.name}
             element={<PersonBigraphy person={person} />}
           ></Route>
