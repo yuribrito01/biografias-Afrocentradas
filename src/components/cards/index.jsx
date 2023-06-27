@@ -4,7 +4,7 @@ import "./styles.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-export const Card = ({ image, name, description }) => {
+export const Card = ({key, image, name, description }) => {
   const [liked, setLiked] = useState(false);
 
   const updateLiked = (value) => {

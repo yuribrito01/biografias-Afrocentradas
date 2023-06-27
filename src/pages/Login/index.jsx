@@ -24,7 +24,7 @@ export const Login = () => {
         signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
                 // setIsLoggedIn(true);
-                console.log(userCredential.user);
+                // console.log(userCredential.user);
             })
     }
 
