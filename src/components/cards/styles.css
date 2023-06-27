@@ -84,3 +84,8 @@ a {
   background-color: blue !important;
   margin-right: 15%;
 }
+
+.unlikeButton{
+  background-color: red;
+  margin-right: 15%;
+}

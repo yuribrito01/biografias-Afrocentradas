@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 export const Favorites = () => {
   const [cards, setCards] = useState([]);
 
-  useEffect (() => {
+  useEffect(() => {
     async function fetchCards() {
       const querySnapshot = await getDocs(collection(db, "favorites"));
       const cardsList = [];
@@ -29,7 +29,7 @@ export const Favorites = () => {
       <div>
         <h1>Meus Favoritos</h1>
         <div className="peopleCardsHome">
-        {cards.map((card) => {
+          {cards.map((card) => {
             return (
               <Card
                 image={card.image}
@@ -40,7 +40,9 @@ export const Favorites = () => {
           })}
         </div>
       </div>
-      <Footer></Footer>
+      <div className="footerPg">
+        <Footer></Footer>
+      </div>
     </div>
   );
 };

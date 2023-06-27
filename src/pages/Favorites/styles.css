@@ -1,6 +1,9 @@
 .listCardsFavotite {
   background-color: rgb(255, 216, 216);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .listCardsHome h1 {
@@ -14,4 +17,8 @@
   flex-wrap: wrap;
   margin-top: 80px;
   gap: 50px;
+}
+
+.footerPg {
+  margin-top: auto;
 }
