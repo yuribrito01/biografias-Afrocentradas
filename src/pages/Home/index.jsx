@@ -34,22 +34,15 @@ export const Home = () => {
 
   const [busca, setBusca] = useState("");
 
-  // const peopleFiltered = honoredPeople.honoredPeople.filter((person) =>
-  //   person.name.toLocaleLowerCase().includes(busca.toLocaleLowerCase())
-  // );
+  const peopleFiltered = cards.filter((person) =>
+    person.name.toLocaleLowerCase().includes(busca.toLocaleLowerCase())
+  );
 
   return (
     <div className="listCardsHome">
       <Navbar />
       <div className="infoHome">
         <div>
-          <i class="fa fa-search"></i>
-          <input
-            type="text"
-            onChange={(e) => setBusca(e.target.value)}
-            value={busca}
-            placeholder="Pesquisar"
-          />
           <p id="textHome">
             Aqui você encontrará biografias de pessoas negras notáveis que
             tiveram um impacto significativo no país. Explore as histórias
@@ -63,8 +56,15 @@ export const Home = () => {
       </div>
       <div>
         <h1>Conheça algumas pessoas em destaque</h1>
+        <i class="fa fa-search"></i>
+          <input
+            type="text"
+            onChange={(e) => setBusca(e.target.value)}
+            value={busca}
+            placeholder="Pesquisar"
+          />
         <div className="peopleCardsHome">
-          {cards.map((card) => {
+          {peopleFiltered.map((card) => {
             return (
               <Card
                 image={card.image}
