@@ -2,6 +2,7 @@ import { Navbar } from "../../components/navbar"
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from "../../services/firebaseConfig";
 import { useState } from "react";
+import { Footer } from "../../components/footer";
 import "./styles.css"
 
 
@@ -31,11 +32,11 @@ export const NewPerson = () => {
 
     async function addInBd(e) {
         e.preventDefault();
-        if (namePerson === "" || image === "" || smallDescriptiopn === "" || longDescription=== "") {
+        if (namePerson === "" || image === "" || smallDescriptiopn === "" || longDescription === "") {
             alert("Preencha todos os campos!!");
             return;
-          }
-          
+        }
+
         try {
             const docRef = await addDoc(collection(db, "honored"), {
                 name: namePerson,
@@ -54,18 +55,18 @@ export const NewPerson = () => {
     }
 
     return (
-        <div>
+        <div className="containerInputsNewPerson">
             <div id="toastContainer"></div>
             <Navbar />
             <h1 className="inputsNewPerson">Adicione uma nova pessoa homeageada!</h1>
-            <div >
+            <div className="containerInputsNewPerson">
                 <form className="inputsNewPerson">
-            
+
                     <input type="text" className="individualInput" placeholder="Nome" value={namePerson} onChange={e => setNamePerson(e.target.value)} />
                     <input type="url" className="individualInput" placeholder="Imagem" value={image} onChange={e => setImage(e.target.value)} />
                     <input type="text" className="individualInput" placeholder="Breve Descrição" value={smallDescriptiopn} onChange={e => setSmallDescriptiopn(e.target.value)} />
                     <input type="text" className="individualInput" placeholder="Descrição completa" value={longDescription} onChange={e => setLongDescription(e.target.value)} />
-                    <button className="newFormBtn" onClick={(e) => {addInBd(e)}}>Enviar</button>
+                    <button className="newFormBtn" onClick={(e) => { addInBd(e) }}>Enviar</button>
 
                 </form>
             </div>

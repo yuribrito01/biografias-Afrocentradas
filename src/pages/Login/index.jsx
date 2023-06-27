@@ -11,7 +11,7 @@ import AuthContext from '../../assets/AuthContext';
 export const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [ setIsLoggedIn] = useContext(AuthContext);
+    // const [ setIsLoggedIn] = useContext(AuthContext);
     const [
         signInWithEmailAndPassword,
         user,
@@ -23,7 +23,7 @@ export const Login = () => {
         e.preventDefault();
         signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
-                setIsLoggedIn(true);
+                // setIsLoggedIn(true);
                 console.log(userCredential.user);
             })
     }
