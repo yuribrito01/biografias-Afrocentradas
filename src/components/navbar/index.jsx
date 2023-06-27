@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import logo from "../../images/Rustic_Printed-removebg-preview.png";
 import "./styles.css";
+import AuthContext from "../../assets/AuthContext";
+import { useContext } from "react";
+
 
 export const Navbar = () => {
+  
+    // const { isLoggedIn } = useContext(AuthContext);
+    // console.log("Login é", isLoggedIn);
+ 
+  
   return (
     <div className="navbarClass">
       <Link to="/">
@@ -30,3 +38,5 @@ export const Navbar = () => {
     </div>
   );
 };
+
+export default Navbar;

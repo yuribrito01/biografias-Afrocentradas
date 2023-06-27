@@ -23,7 +23,6 @@ export const Home = () => {
       const querySnapshot = await getDocs(collection(db, "honored"));
       const cardsList = [];
       querySnapshot.forEach((doc) => {
-        console.log(doc.data());
         cardsList.push(doc.data());
       });
       setCards(cardsList);
@@ -71,7 +70,7 @@ export const Home = () => {
                 image={card.image}
                 name={card.name}
                 description={card.smallDescriptiopn}
-                curtir="Curtir"
+                description2={card.longDescription}
               />
             );
           })}

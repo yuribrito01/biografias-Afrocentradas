@@ -1,17 +1,17 @@
 
-import { useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import logoImage from '../../images/Rustic_Printed-removebg-preview.png'
 import { Link, Navigate } from "react-router-dom";
 import { LayoutComponents } from '../../components/layoutComponents';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../../services/firebaseConfig';
 import { Loader } from '../../components/loader';
-
+import AuthContext from '../../assets/AuthContext';
 
 export const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [ setIsLoggedIn] = useContext(AuthContext);
     const [
         signInWithEmailAndPassword,
         user,
@@ -66,5 +66,7 @@ export const Login = () => {
                 </div>
             </form>
         </LayoutComponents>
+        
     );
+
 }

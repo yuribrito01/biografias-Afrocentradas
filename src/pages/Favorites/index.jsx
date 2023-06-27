@@ -1,25 +1,27 @@
 import { Card } from "../../components/cards";
 import { Navbar } from "../../components/navbar";
-import logo from "../../images/Rustic_Printed-removebg-preview.png";
-import carolina from "../../images/carolina.webp";
-import marielle from "../../images/marielle-franco.webp";
-import miltom from "../../images/milton_santos.webp";
-import machado from "../../images/machado-de-assis.webp";
-import dandara from "../../images/capa_dandara.jpeg";
-import abdias from "../../images/abdias-do-Nascimento.jpg";
 import "./styles.css";
-import honoredPeople from "../Home/people.json";
 import { Footer } from "../../components/footer";
+import { db } from "../../services/firebaseConfig";
+import { collection, getDocs } from "firebase/firestore";
+import { useEffect, useState } from "react";
 
 export const Favorites = () => {
-  const imageMap = {
-    carolina: carolina,
-    marielle: marielle,
-    miltom: miltom,
-    machado: machado,
-    dandara: dandara,
-    abdias: abdias,
-  };
+  const [cards, setCards] = useState([]);
+
+  useEffect (() => {
+    async function fetchCards() {
+      const querySnapshot = await getDocs(collection(db, "favorites"));
+      const cardsList = [];
+      querySnapshot.forEach((doc) => {
+        cardsList.push(doc.data());
+        console.log(doc.data());
+      });
+      setCards(cardsList);
+    }
+
+    fetchCards();
+  }, []);
   return (
     <div className="listCardsFavotite">
       <Navbar />
@@ -27,19 +29,14 @@ export const Favorites = () => {
       <div>
         <h1>Meus Favoritos</h1>
         <div className="peopleCardsHome">
-          {honoredPeople.honoredPeople.map((card, index) => {
-            const image = imageMap[card.image] || null;
-            //if (favoritos[index] === card.name) {
+        {cards.map((card) => {
             return (
               <Card
-                key={index}
-                image={image}
+                image={card.image}
                 name={card.name}
-                description={card.description}
-                curtir="Descurtir"
+                description={card.smallDescriptiopn}
               />
             );
-            //}
           })}
         </div>
       </div>
