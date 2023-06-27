@@ -11,25 +11,31 @@ import { Loader } from '../../components/loader';
 export const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
-      ] = useSignInWithEmailAndPassword(auth);
+    ] = useSignInWithEmailAndPassword(auth);
 
-      function handleSingIn(e) {
+    function handleSingIn(e) {
         e.preventDefault();
-        signInWithEmailAndPassword(email, password);
-      }
+        signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                setIsLoggedIn(true);
+                console.log(userCredential.user);
+            })
+    }
 
-      if (loading) {
+    if (loading) {
         return <Loader />
-      }
+    }
 
-      if (user) {
+    if (user) {
+        console.log(user);
         return <Navigate to="/" />
-      }
+    }
 
     return (
         <LayoutComponents>

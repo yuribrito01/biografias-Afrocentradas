@@ -3,8 +3,9 @@ import logoImage from "../../images/Rustic_Printed-removebg-preview.png"
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { auth } from "../../services/firebaseConfig";
+import { auth, db } from "../../services/firebaseConfig";
 import { Loader } from "../../components/loader";
+import { addDoc, collection } from "firebase/firestore";
 
 export const Register = () => {
     const [email, setEmail] = useState("");
@@ -17,9 +18,18 @@ export const Register = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
 
-      function handleRegister(e) {
+      async function handleRegister(e) {
         e.preventDefault();
         createUserWithEmailAndPassword(email, password);
+        try {
+            const docRef = await addDoc(collection(db, "users"), {
+                name: name,
+                email: email
+            });
+            console.log("Novo usuario adicionado!");
+        } catch (e) {
+            console.log("Erro ao adiocnar!");
+        }
       }
 
       if(loading) {
